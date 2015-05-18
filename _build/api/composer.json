@@ -1,0 +1,12 @@
+{
+  "name": "Majesko/Watermarker",
+  "description": "create watermarks on images",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Majesko",
+      "email": "majesko@gmail.com"
+    }
+  ]
+}
