@@ -16,40 +16,29 @@ $config = [
     'upload_path' => 'upload/',
     'shared_path' => 'shared/',
     'manager'     => $manager,
-    'rules'       => ['jpg','png']
+    'rules'       =>
+        [
+            'type'    => ['jpg','png'],
+            'maxsize' => ''
+        ]
 ];
 
 $watermarker = new Watermarker\Watermarker($config); // init watermarker library
 
 //- main function -//
-if(isset($_FILES['image']) && $_FILES['watermark'])
-{
-    if($watermarker->validateFormat($_FILES)) {
 
-        $image = file_get_contents($_FILES['image']['tmp_name']);
-        $wm    = file_get_contents($_FILES['watermark']['tmp_name']);
+if($watermarker->validateFormat($_FILES)) {
 
-        $file = $watermarker->generateImage($image,$wm); // create image
+    $image = file_get_contents($_FILES['image']['tmp_name']);
+    $wm    = file_get_contents($_FILES['watermark']['tmp_name']);
 
-        //- response -//
-        header('Content-Type: application/json');
-        echo json_encode(['status' => 'ok', 'message' => 'image created', 'filename' => $file]);
-    } else {
-        //- response -//
-        header('Content-Type: application/json');
-        echo json_encode(['status' => 'fail', 'message' => 'incorrect filetype']);
-    }
+    $file = $watermarker->generateImage($image,$wm); // create image
 
-
+    //- response -//
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'ok', 'message' => 'image created', 'filename' => $file]);
 } else {
     //- response -//
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'fail', 'message' => 'no files for upload']);
+    echo json_encode(['status' => 'fail', 'message' => 'incorrect files']);
 }
-
-
-
-
-
-
-
