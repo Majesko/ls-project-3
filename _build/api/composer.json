@@ -8,5 +8,8 @@
       "name": "Majesko",
       "email": "majesko@gmail.com"
     }
-  ]
+  ],
+  "require": {
+    "intervention/image": "~2.2"
+  }
 }
