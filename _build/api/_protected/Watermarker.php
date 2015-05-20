@@ -15,6 +15,7 @@ class Watermarker {
             $rules     = [],
             $config    = [];
 
+
     function __construct($config)
     {
         $this->config = $config;
@@ -28,24 +29,29 @@ class Watermarker {
         return $new_name;
     }
 
-    public function validateFormat($files) //допилить - не пашет
+    /* Validation file type */
+    public function validateFormat($files)
     {
         foreach($files as $file) {
-            $arr = explode('.', $file['name']);
+            $arr = explode('.', $file['name']); //split filename and extension
             $extension = end($arr);
-            if(!array_search($extension, $this->config['rules'])) {
-                return 0;
+            if(!in_array($extension, $this->config['rules'])) { // validate with rules array
+                return false;
             }
         }
-        return '1';
+        return true;
     }
 
+    /* Generate image */
     public function generateImage($image, $wm)
     {
-        $img = $this->config['manager']->make($image);
-        $wm  = $this->config['manager']->make($wm)->opacity(10);
+        $img  = $this->config['manager']->make($image);
+        $wm   = $this->config['manager']->make($wm)->opacity(10);
+        $file = $this->setSafeName().'.jpg';
         $img->fill($wm);
-        $img->save($this->config['shared_path'].$this->setSafeName().'.jpg');
+        $img->save($this->config['shared_path'].$file);
+
+        return $file;
     }
 
 //    safe file locally

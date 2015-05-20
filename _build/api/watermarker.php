@@ -11,31 +11,38 @@ $manager = new ImageManager(array('driver' => 'imagick'));
 
 
 $config = [
-    'image' => 'image',
-    'watermark' => 'watermark',
+    'image'       => 'image',
+    'watermark'   => 'watermark',
     'upload_path' => 'upload/',
     'shared_path' => 'shared/',
-    'manager' => $manager,
-    'rules' => ['jpg','png']
+    'manager'     => $manager,
+    'rules'       => ['jpg','png']
 ];
 
-$watermarker = new Watermarker\Watermarker($config);
+$watermarker = new Watermarker\Watermarker($config); // init watermarker library
 
-$arr = ['jpg', 'png'];
-echo array_search('jpg', $arr); //нихера не работает
-
+//- main function -//
 if(isset($_FILES['image']) && $_FILES['watermark'])
 {
-    $image = file_get_contents($_FILES['image']['tmp_name']);
-    $wm    = file_get_contents($_FILES['watermark']['tmp_name']);
+    if($watermarker->validateFormat($_FILES)) {
 
-//    echo $watermarker->validateFormat($_FILES);
+        $image = file_get_contents($_FILES['image']['tmp_name']);
+        $wm    = file_get_contents($_FILES['watermark']['tmp_name']);
 
-//    $watermarker->generateImage($image,$wm);
-//    echo $watermarker->validateFormat($_FILES['image']);
-//    print_r($_FILES);
+        $file = $watermarker->generateImage($image,$wm); // create image
+
+        //- response -//
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'ok', 'message' => 'image created', 'filename' => $file]);
+    } else {
+        //- response -//
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'fail', 'message' => 'incorrect filetype']);
+    }
+
 
 } else {
+    //- response -//
     header('Content-Type: application/json');
     echo json_encode(['status' => 'fail', 'message' => 'no files for upload']);
 }
