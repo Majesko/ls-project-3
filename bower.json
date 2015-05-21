@@ -2,6 +2,9 @@
   "name": "Template",
   "dependencies": {
     "jquery": "~2.1.4",
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.4",
+    "normalize.css": "~3.0.3",
+    "jquery-ui": "~1.11.4",
+    "modernizr": "~2.8.3"
   }
 }
