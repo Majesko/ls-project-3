@@ -54,7 +54,7 @@ gulp.task('jade', function () {
 });
 
 gulp.task('js', function () {
-    gulp.src('./_src/js/DevJS/*.js')
+    gulp.src('./_src/js/modules/*.js')
         .pipe(concat('app.js'))
         .pipe(gulp.dest('./_src/js/'))
         .pipe(reload({stream: true}));
