@@ -1,0 +1,27 @@
+html, body, .wrapper {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.main-content {
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+}
+.dragg-field {
+  height: 600px;
+  width: 600px;
+  background: gray;
+}
+.draggabilly {
+  background: red;
+  width: 90px;
+  height: 90px;
+}
+.dragg-window__x, div.dragg-window__y {
+  height: 40px;
+  width: 40px;
+  background: #ffff00;
+}

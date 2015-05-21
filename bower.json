@@ -2,6 +2,7 @@
   "name": "Template",
   "dependencies": {
     "jquery": "~2.1.4",
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.4",
+    "draggabilly": "~1.2.3"
   }
 }
