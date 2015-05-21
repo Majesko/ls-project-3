@@ -16,12 +16,24 @@ html, body, .wrapper {
   background: gray;
 }
 .draggabilly {
-  background: red;
-  width: 90px;
-  height: 90px;
+  display: inline-block;
+}
+.draggabilly__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 .dragg-window__x, div.dragg-window__y {
   height: 40px;
   width: 40px;
   background: #ffff00;
+}
+// Классы для стилизации DAD из коробки, может пригодится верстальщикам
+// Стили при зажатии клавиши мыши на нём
+.draggabilly.is-pointer-down {
+  opacity: 0.5;
+}
+// Стили при передвижении элемента.
+.draggabilly.is-dragging {
+  border: 3px solid red;
 }
