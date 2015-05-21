@@ -1,0 +1,20 @@
+doctype html
+html(lang="")
+	include ../common/head.jade
+	body
+		<!--[if lt IE 7]>
+		<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите</a> его.</p>
+		<![endif]-->
+		.wrapper
+			.maincontent
+				.container
+					.content
+						.watermark-wrapper
+							.watermark-title Генератор водяных знаков
+							.watermark-block_img
+								img(src="")
+								img(src="")
+						include ../common/aside.jade
+			include ../common/like.jade
+		//- Футер
+		include ../common/footer.jade

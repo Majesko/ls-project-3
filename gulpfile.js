@@ -44,7 +44,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('jade', function () {
-    gulp.src('./_src/jade/*.jade')
+    gulp.src('./_src/jade/pages/*.jade')
         .pipe(plumber())
         .pipe(jade({
             pretty: true
