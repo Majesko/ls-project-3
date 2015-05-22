@@ -1,0 +1,127 @@
+
+.sidebar {
+	width: 260px;
+	float: left;
+	background-color: #f1f1f5;
+}
+// заголовок настройки
+.sidebar__headline {
+	font-family: 'robotolight';
+	font-size: 26px;
+	color: #2e3641;
+	text-align: center;
+}
+
+// декоративные элементы групп инпутов
+.sidebar__position,
+.sidebar__opacity,
+.sidebar__btns {
+	position: relative;
+	border-top: 1px solid #f4c3c2;
+	&:before {
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -10px;
+		border-top: 12px solid #f4c3c2;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+	}
+	&:after {
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: -2px;
+		left: 50%;
+		margin-left: -10px;
+		border-top: 12px solid #f1f1f5;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+	}
+}
+
+
+// заголовки
+.sidebar__title {
+	font-family: 'robotolight';
+	font-size: 14px;
+	color: #2e3641;
+}
+// ползунок
+.sidebar__opacity-slider {
+	position: relative;
+	width: 218px;
+	height: 3px;
+	margin: 20px auto;
+	padding: 0px;
+	border-radius: 3px;
+	background-color: #dbe1e8;
+	&:focus{
+		outline: none;
+	}
+}
+
+// стиль кнопки ползунка
+.ui-slider-handle {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	margin-left: 0;
+	top: -9px;
+	z-index: 5;
+	border-radius: 50%;
+	border: 7px solid #dbe1e8;
+	box-shadow: 0 1px 1px #aeaeb1;
+	background-color: #9eb2c0;
+	&:hover {
+		background-color: #f97e76;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+// полоска заполнитель ползунка
+.ui-widget-header {
+	position: absolute;
+	height: 3px;
+	top: 0;
+	left: 0;
+	border-radius: 3px;
+	background-color: #9eb2c0;
+}
+.sidebar__opacity-slider a {
+	outline: none;
+	-moz-outline-style: none;
+}
+
+// кнопки сброс и скачать
+.sidebar__btns {
+	@extend .clearfix;
+}
+.form__btn {
+	width: 99px;
+	height: 42px;
+	font-family: 'robotomedium';
+	font-size: 19px;
+	color: #f1f1f5;
+	border-radius: 3px;
+	border: none;
+}
+.form__btn_reset {
+	float: left;
+	background-color: #c1cfd9;
+	&:hover {
+		border: 1px solid #a6b2bb;
+	}
+}
+.form__btn_download {
+	float: right;
+	background-color: #f97e76;
+	&:hover {
+		border: 1px solid #e3736c;
+	}
+}
