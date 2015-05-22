@@ -35,18 +35,16 @@ body {
   color: #ffffff;
   text-align: center; }
 
-.clearfix:after {
+.clearfix:before,
+.container:before,
+.clearfix:after, .container:after {
   content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  line-height: 0;
-  visibility: hidden; }
+  display: table; }
 
-.clearfix {
-  display: block; }
+.clearfix:after, .container:after {
+  clear: both; }
 
-.container .clearfix {
+.container {
   width: 962px;
   margin: 60px auto 70px; }
 
@@ -70,3 +68,7 @@ h1.main_head {
   height: 534px;
   margin: 0 auto 25px;
   background: #ffffff; }
+
+.sidebar {
+  width: 260px;
+  float: right; }
