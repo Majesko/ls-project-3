@@ -1,7 +1,8 @@
 .sidebar {
   width: 260px;
   float: left;
-  background-color: #f1f1f5; }
+  background-color: #f1f1f5;
+  border-left: 1px solid #afa8ab; }
 
 .sidebar__headline {
   font-family: 'robotolight';
@@ -45,6 +46,65 @@
   font-family: 'robotolight';
   font-size: 14px;
   color: #2e3641; }
+
+.switch {
+  width: 110px;
+  height: 46px;
+  margin-bottom: 12px; }
+
+.switch__label {
+  display: block;
+  float: left;
+  width: 39px;
+  height: 45px;
+  margin-right: 5px;
+  text-align: right; }
+
+.ui-spinner {
+  position: relative;
+  width: 66px;
+  float: right; }
+
+.ui-spinner-input {
+  width: 46px;
+  padding: 8px 0;
+  font-size: 24px;
+  color: #444a53;
+  text-align: center;
+  border-radius: 4px;
+  background: none;
+  border: 1px solid #9eb2c0; }
+  .ui-spinner-input:focus {
+    outline: none; }
+
+.ui-spinner-button {
+  width: 20px;
+  height: 22px; }
+
+.ui-spinner-up {
+  position: absolute;
+  top: 0;
+  background-image: url(../img/switches.png);
+  background-repeat: no-repeat;
+  background-position: right 7px; }
+  .ui-spinner-up:hover {
+    background-image: url(../img/switches.png);
+    background-repeat: no-repeat;
+    background-position: right -35px; }
+
+.ui-spinner-down {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../img/switches.png);
+  background-repeat: no-repeat;
+  background-position: right -73px; }
+  .ui-spinner-down:hover {
+    background-image: url(../img/switches.png);
+    background-repeat: no-repeat;
+    background-position: right -113px; }
+
+.ui-icon {
+  display: none; }
 
 .sidebar__opacity-slider {
   position: relative;

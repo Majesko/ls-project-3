@@ -3,6 +3,7 @@
 	width: 260px;
 	float: left;
 	background-color: #f1f1f5;
+	border-left: 1px solid #afa8ab;
 }
 // заголовок настройки
 .sidebar__headline {
@@ -51,6 +52,82 @@
 	font-size: 14px;
 	color: #2e3641;
 }
+
+// настройки позиции
+.switch {
+	@extend .clearfix;
+	width: 110px;
+	height: 46px;
+	margin-bottom: 12px;
+}
+
+// стиль лабела у переключателей позиции
+.switch__label {
+	display: block;
+	float: left;
+	width: 39px;
+	height: 45px;
+	margin-right: 5px;
+	text-align: right;
+}
+// эти стили переопределяем у плагина
+
+@mixin switch($right, $top) {
+  background-image: url(../img/switches.png);
+  background-repeat: no-repeat;
+  background-position: $right $top;
+}
+// обертка инпута и кнопок
+.ui-spinner {
+	position: relative;
+	width: 66px;
+	float: right;
+}
+
+// стиль самого инпута значений
+.ui-spinner-input {
+	width: 46px;
+	padding: 8px 0;
+	font-size: 24px;
+	color: #444a53;
+	text-align: center;
+	border-radius: 4px;
+	background: none;
+	border: 1px solid #9eb2c0;
+	&:focus{
+		outline: none;
+	}
+}
+// кнопки больше и меньше
+.ui-spinner-button {
+	width: 20px;
+	height: 22px;
+}
+// кнопка больше
+.ui-spinner-up {
+	position: absolute;
+	top: 0;
+	@include switch(right, 7px);
+	&:hover {
+		@include switch(right, -35px);
+	}
+}
+
+.ui-spinner-down {
+	position: absolute;
+	bottom: 0;
+	@include switch(right, -73px);
+		&:hover {
+		@include switch(right, -113px);
+	}
+}
+.ui-icon {
+	display: none;
+}
+
+// End эти стили переопределяем у плагина
+
+
 // ползунок
 .sidebar__opacity-slider {
 	position: relative;
@@ -64,7 +141,7 @@
 		outline: none;
 	}
 }
-
+// эти стили переопределяем у плагина
 // стиль кнопки ползунка
 .ui-slider-handle {
 	position: absolute;
@@ -97,6 +174,8 @@
 	outline: none;
 	-moz-outline-style: none;
 }
+// End эти стили переопределяем у плагина
+
 
 // кнопки сброс и скачать
 .sidebar__btns {
