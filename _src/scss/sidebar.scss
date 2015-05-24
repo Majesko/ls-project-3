@@ -1,4 +1,17 @@
 
+.clearfix:before,
+.container:before,
+.clearfix:after, .container:after {
+  content: "";
+  display: table; }
+
+.clearfix:after, .container:after {
+  clear: both; }
+
+.form {
+	margin-bottom: 30px;
+}
+
 .sidebar {
 	width: 260px;
 	float: left;
@@ -18,6 +31,7 @@
 .sidebar__opacity,
 .sidebar__btns {
 	position: relative;
+
 	border-top: 1px solid #f4c3c2;
 	&:before {
 		content: "";
@@ -44,7 +58,14 @@
 		border-left: 10px solid transparent;
 	}
 }
-
+.sidebar__image-settings,
+.sidebar__position,
+.sidebar__opacity {
+	padding: 0 20px 30px;
+}
+.sidebar__btns {
+	padding: 56px 10px 0 10px;
+}
 
 // заголовки
 .sidebar__title {
@@ -52,8 +73,151 @@
 	font-size: 14px;
 	color: #2e3641;
 }
+// инпуты загрузки файлов
+.form__field {
+	@extend .clearfix;
+	position: relative;
+}
+.form__field .form__input_text {
+	float: left;
+	width: 184px;
+	margin-right: -14px;
+	padding: 5px 4px;
+	font-size: 12px;
+	border-radius: 3px;
+	background: none;
+	border: 1px solid #9eb2c0;
+}
+
+.form__input_file-icon {
+	float: right;
+	width: 39px;
+	height: 27px;
+	background-color: #f97e76;
+	background-image: url(../img/download.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 0 4px 4px 0;
+}
+
+.form__input_file {
+	position: absolute;
+	width: 39px;
+	height: 27px;
+	top: 0;
+	right: 0;
+	cursor: auto;
+	opacity: 0;
+}
+
 
 // настройки позиции
+.sidebar__position {
+	position: relative;
+}
+.sidebar__position .sidebar__title {
+	margin-bottom: 40px;
+}
+.sidebar__display {
+	@extend .clearfix;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+@mixin btn-display($left, $top) {
+  background-image: url(../img/btn-display.png);
+  background-repeat: no-repeat;
+  background-position: $left $top;
+  height: 19px;
+  width: 19px;
+}
+
+// .ico_oneoff_êîïèÿ 
+//   @include spritebox(-40px, -0px, 19px, 19px)
+
+// .ico_oneon 
+//   @include spritebox(-80px, -0px, 19px, 19px)
+
+// .ico_oneoff 
+//   @include spritebox(-0px, -0px, 19px, 19px)
+
+// .ico_tileoff_êîïèÿ 
+//   @include spritebox(-160px, -0px, 19px, 19px)
+
+// .ico_tileoff 
+//   @include spritebox(-120px, -0px, 19px, 19px)
+
+// .ico_tileon 
+//   @include spritebox(-200px, -0px, 19px, 19px)
+.sidebar__display-item{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	// @include btn-display(0, 0);
+	&:first-child{
+		margin-left: 0;
+
+	}
+}
+.sidebar__display-item_view1 {
+	display: block;
+	@include btn-display(0, 0);
+
+	&:hover{
+		@include btn-display(-40px, 0);
+	}
+}
+.sidebar__display-item_view2 {
+	display: block;
+	@include btn-display(-120px, 0);
+
+	&:hover{
+		@include btn-display(-160px, 0);
+	}
+}
+.sidebar__display-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+}
+
+.sidebar__position-item {
+	@extend .clearfix;
+	display: none;
+}
+.sidebar__position-item_active {
+	display: block;
+}
+.sidebar__position-square {
+	float: left;
+}
+.square {
+	@extend .clearfix;
+	width: 103px;
+	border: 1px solid #9eb2c0;
+	border-right: none;
+	border-bottom: none;
+}
+
+.square__item {
+	border-right: 1px solid #9eb2c0;
+	border-bottom: 1px solid #9eb2c0;
+	float: left;
+	width: 33px;
+	height: 33px;
+	&:hover {
+		background: #f97e76;
+	}
+}
+.sidebar__position-switch {
+	float: right;
+}
 .switch {
 	@extend .clearfix;
 	width: 110px;
@@ -66,7 +230,7 @@
 	display: block;
 	float: left;
 	width: 39px;
-	height: 45px;
+	height: 46px;
 	margin-right: 5px;
 	text-align: right;
 }
@@ -81,6 +245,7 @@
 .ui-spinner {
 	position: relative;
 	width: 66px;
+	height: 46px;
 	float: right;
 }
 

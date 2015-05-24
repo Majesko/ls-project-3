@@ -57,6 +57,7 @@
               <div class="form__field">
                 <input name="image" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
                 <input id="image" name="jpg" type="file" class="form__input form__input_file">
+                <div class="form__input_file-icon"></div>
               </div>
               <label for="watermark">
                 <h3 class="sidebar__title">Водяной знак</h3>
@@ -64,15 +65,16 @@
               <div class="form__field">
                 <input name="watermark" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
                 <input id="watermark" name="png" type="file" class="form__input form__input_file">
+                <div class="form__input_file-icon"></div>
               </div>
             </div>
             <div class="sidebar__position">
               <h3 class="sidebar__title">Положение</h3>
               <ul class="sidebar__display">
-                <li class="sidebar__display-item sidebar__display-item_view1">Вид 1</li>
-                <li class="sidebar__display-item sidebar__display-item_view2 sidebar__display-item_active">Вид 2</li>
+                <li class="sidebar__display-item sidebar__display-item_view1"><a class="sidebar__display-link">Вид 1</a></li>
+                <li class="sidebar__display-item sidebar__display-item_view2"><a class="sidebar__display-link">Вид 2</a></li>
               </ul>
-              <div class="sidebar__position-item">
+              <div class="sidebar__position-item sidebar__position-item_active">
                 <div class="sidebar__position-square">
                   <div class="square">
                     <div class="square__item"></div>
@@ -97,7 +99,7 @@
                   </div>
                 </div>
               </div>
-              <div class="sidebar__position-item sidebar__position-item_active">
+              <div class="sidebar__position-item">
                 <div class="sidebar__position-square">
                   <div class="square">
                     <div class="square__item"></div>
@@ -114,11 +116,11 @@
                 <div class="sidebar__position-switch">
                   <div class="switch">
                     <label for="up-down" class="switch__label">&updownarrow;</label>
-                    <input id="up-down" type="text" name="up-down" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
+                    <input id="up-down" type="text" name="up-down" value="0" class="form__input form__input_text">
                   </div>
                   <div class="switch">
                     <label for="left-right" class="switch__label">&harr;</label>
-                    <input id="left-right" type="text" name="left-right" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
+                    <input id="left-right" type="text" name="left-right" value="0" class="form__input form__input_text">
                   </div>
                 </div>
               </div>
