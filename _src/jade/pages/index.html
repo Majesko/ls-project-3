@@ -56,15 +56,15 @@
                   <h3 class="sidebar__title">Исходное изображение</h3>
                 </label>
                 <div class="form__field">
-                  <input name="image" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
-                  <input id="image" name="jpg" type="file" class="form__input form__input_file">
+                  <input name="image_filename" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
+                  <input id="image" name="image" type="file" class="form__input form__input_file">
                 </div>
                 <label for="watermark">
                   <h3 class="sidebar__title">Водяной знак</h3>
                 </label>
                 <div class="form__field">
-                  <input name="watermark" type="text" placeholder="Image.png" readonly class="form__input form__input_text">
-                  <input id="watermark" name="png" type="file" class="form__input form__input_file">
+                  <input name="watermark_filename" type="text" placeholder="Image.png" readonly class="form__input form__input_text">
+                  <input id="watermark" name="watermark" type="file" class="form__input form__input_file">
                 </div>
               </div>
             </div>
@@ -92,11 +92,11 @@
                   <div class="sidebar__position-switch">
                     <div class="switch">
                       <label for="x" class="switch__label">X</label>
-                      <input id="x" type="text" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="x" type="text" value="0" name="x_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
                     </div>
                     <div class="switch">
                       <label for="y" class="switch__label">Y</label>
-                      <input id="y" type="text" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="y" type="text" value="0" name="y_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
                     </div>
                   </div>
                 </div>
@@ -117,11 +117,11 @@
                   <div class="sidebar__position-switch">
                     <div class="switch">
                       <label for="up-down" class="switch__label">&updownarrow;</label>
-                      <input id="up-down" type="text" name="up-down" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="up-down" type="text" name="up-down_val" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
                     </div>
                     <div class="switch">
                       <label for="left-right" class="switch__label">&harr;</label>
-                      <input id="left-right" type="text" name="left-right" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="left-right" type="text" name="left-right_val" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
               <div class="sidebar__opacity">
                 <h3 class="sidebar__title">Прозрачность</h3>
                 <div class="sidebar__opacity-slider"></div>
-                <input type="text" readonly hidden class="sidebar__opacity-value">
+                <input type="text" readonly name="slider_val" hidden class="sidebar__opacity-value">
               </div>
             </div>
             <div class="sidebar__btns clearfix">

@@ -8,13 +8,13 @@
         label(for="image")
           h3.sidebar__title Исходное изображение
         .form__field
-          input.form__input.form__input_text(name="image" type="text", placeholder="Image.jpg", readonly)
-          input.form__input.form__input_file(id="image", name="jpg" type="file")
+          input.form__input.form__input_text(name="image_filename" type="text", placeholder="Image.jpg", readonly)
+          input.form__input.form__input_file(id="image", name="image" type="file")
         label(for="watermark")
           h3.sidebar__title Водяной знак
         .form__field
-          input.form__input.form__input_text(name="watermark" type="text", placeholder="Image.png", readonly)
-          input.form__input.form__input_file(id="watermark", name="png" type="file")
+          input.form__input.form__input_text(name="watermark_filename" type="text", placeholder="Image.png", readonly)
+          input.form__input.form__input_file(id="watermark", name="watermark" type="file")
 
     //- Обёртка для настроек положения ->
     .sidebar__wrap
@@ -48,12 +48,12 @@
           .sidebar__position-switch
             .switch
               label.switch__label(for="x") X
-              input.form__input.sidebar__position-val(id="x", type="text", value="0")
+              input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")
               span.switch__btn.switch__btn_up
               span.switch__btn.switch__btn_down
             .switch
               label.switch__label(for="y") Y
-              input.form__input.sidebar__position-val(id="y", type="text", value="0")
+              input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")
               span.switch__btn.switch__btn_up
               span.switch__btn.switch__btn_down
         //- Обёртка для отображения блока настроек Вида 2 ->
@@ -78,12 +78,12 @@
           .sidebar__position-switch
             .switch
               label.switch__label(for="up-down") &updownarrow;
-              input.form__input.sidebar__position-val(id="up-down", type="text", name="up-down", value="0")
+              input.form__input.sidebar__position-val(id="up-down", type="text", name="up-down_val", value="0")
               span.switch__btn.switch__btn_up
               span.switch__btn.switch__btn_down
             .switch
               label.switch__label(for="left-right") &harr;
-              input.form__input.sidebar__position-val(id="left-right", type="text", name="left-right", value="0")
+              input.form__input.sidebar__position-val(id="left-right", type="text", name="left-right_val", value="0")
               span.switch__btn.switch__btn_up
               span.switch__btn.switch__btn_down
 
@@ -94,7 +94,7 @@
 
         //- Слайдер для прозрачности ->
         .sidebar__opacity-slider
-        input.sidebar__opacity-value(type="text", readonly, hidden)
+        input.sidebar__opacity-value(type="text", readonly, name="slider_val" hidden)
 
     //- Обёртка для кнопок ->
     .sidebar__btns.clearfix
