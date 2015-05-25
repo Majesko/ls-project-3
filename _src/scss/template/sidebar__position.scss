@@ -162,7 +162,7 @@
 	top: 0;
 	@include switch(right, 7px);
 	&:hover {
-		@include switch(right, -35px);
+		@include switch(right, -33px);
 	}
 }
 

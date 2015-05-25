@@ -417,7 +417,7 @@ body {
   .ui-spinner-up:hover {
     background-image: url(../img/switches.png);
     background-repeat: no-repeat;
-    background-position: right -35px; }
+    background-position: right -33px; }
 
 .ui-spinner-down {
   position: absolute;
