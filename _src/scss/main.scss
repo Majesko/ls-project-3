@@ -1,4 +1,7 @@
-
+* {
+	margin: 0;
+	padding: 0;
+}
 
 html,body {
 	height: 100%;
@@ -75,8 +78,4 @@ h1.main_head {
 	height: 534px;
 	margin: 0 auto 25px;
 	background: #ffffff;
-}
-.sidebar {
-	width: 260px;
-	float: right;
 }
