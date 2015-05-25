@@ -1,0 +1,51 @@
+
+// End эти стили переопределяем у плагина
+
+
+// ползунок
+.sidebar__opacity-slider {
+	position: relative;
+	width: 218px;
+	height: 3px;
+	margin: 20px auto;
+	padding: 0px;
+	border-radius: 3px;
+	background-color: #dbe1e8;
+	&:focus{
+		outline: none;
+	}
+}
+// эти стили переопределяем у плагина
+// стиль кнопки ползунка
+.ui-slider-handle {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	margin-left: 0;
+	top: -9px;
+	z-index: 5;
+	border-radius: 50%;
+	border: 7px solid #dbe1e8;
+	box-shadow: 0 1px 1px #aeaeb1;
+	background-color: #9eb2c0;
+	&:hover {
+		background-color: #f97e76;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+// полоска заполнитель ползунка
+.ui-widget-header {
+	position: absolute;
+	height: 3px;
+	top: 0;
+	left: 0;
+	border-radius: 3px;
+	background-color: #9eb2c0;
+}
+.sidebar__opacity-slider a {
+	outline: none;
+	-moz-outline-style: none;
+}
+// End эти стили переопределяем у плагина

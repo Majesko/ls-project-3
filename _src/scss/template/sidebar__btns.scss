@@ -1,0 +1,30 @@
+// кнопки сброс и скачать
+.sidebar__btns {
+	@extend .clearfix;
+}
+.form__btn {
+	width: 99px;
+	height: 42px;
+	margin-bottom: 30px;
+	font-family: 'robotomedium';
+	font-size: 19px;
+	color: #f1f1f5;
+	border-radius: 3px;
+	border: none;
+}
+.form__btn_reset {
+	float: left;
+	background-color: #c1cfd9;
+	&:hover {
+		background-color: #b4c2cb;
+		border: 1px solid #a6b2bb;
+	}
+}
+.form__btn_download {
+	float: right;
+	background-color: #f97e76;
+	&:hover {
+		background-color: #f17a72;
+		border: 1px solid #e3736c;
+	}
+}
