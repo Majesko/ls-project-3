@@ -1,36 +1,67 @@
 // инпуты загрузки файлов
-.form__field {
-	@extend .clearfix;
-	position: relative;
-}
-.form__field .form__input_text {
-	float: left;
-	width: 184px;
-	margin-right: -14px;
-	padding: 5px 4px;
-	font-size: 12px;
-	border-radius: 3px;
-	background: none;
-	border: 1px solid #9eb2c0;
-}
+// .form__field {
+// 	@extend .clearfix;
+// 	position: relative;
+// }
+// .form__field .form__input_text {
+// 	float: left;
+// 	width: 184px;
+// 	margin-right: -14px;
+// 	padding: 5px 4px;
+// 	font-size: 12px;
+// 	border-radius: 3px;
+// 	background: none;
+// 	border: 1px solid #9eb2c0;
+// }
 
-.form__input_file-icon {
-	float: right;
-	width: 39px;
-	height: 27px;
-	background-color: #f97e76;
-	background-image: url(../img/download.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	border-radius: 0 4px 4px 0;
-}
+// .form__input_file-icon {
+// 	float: right;
+// 	width: 39px;
+// 	height: 27px;
+// 	background-color: #f97e76;
+// 	background-image: url(../img/download.png);
+// 	background-position: center center;
+// 	background-repeat: no-repeat;
+// 	border-radius: 0 4px 4px 0;
+// }
 
-.form__input_file {
-	position: absolute;
-	width: 39px;
-	height: 27px;
-	top: 0;
-	right: 0;
-	cursor: auto;
-	opacity: 0;
+// .form__input_file {
+// 	position: absolute;
+// 	width: 39px;
+// 	height: 27px;
+// 	top: 0;
+// 	right: 0;
+// 	cursor: auto;
+// 	opacity: 0;
+// }
+
+.form {
+	&__field {
+		position: relative;
+	}
+	&__input {
+		outline: none;
+		&_text {
+			background: transparent;
+			font-size: 12px;
+			font-family: 'segoe ui';
+			color: #9eb2c0;
+			border: 1px solid #9eb2c0;
+			border-radius: 3px;
+			padding: 4px 39px 5px 3px;
+			margin-bottom: 5px;
+			width: 176px;
+		}
+		&_file {
+			background: url("../img/upload_btn_bg.png") no-repeat 0 0;
+			cursor: pointer;
+			height: 27px;
+			width: 0;
+			overflow: hidden;
+			padding-left: 39px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
 }
