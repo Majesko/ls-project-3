@@ -33,11 +33,12 @@ body {
 .clearfix:before,
 .container:before,
 .options__socials:before,
-.clearfix:after, .container:after, .options__socials:after {
+.sidebar__display:before,
+.clearfix:after, .container:after, .options__socials:after, .sidebar__display:after {
   content: "";
   display: table; }
 
-.clearfix:after, .container:after, .options__socials:after {
+.clearfix:after, .container:after, .options__socials:after, .sidebar__display:after {
   clear: both; }
 
 .container {
@@ -206,10 +207,15 @@ body {
     .sidebar__wrap:after {
       content: "";
       display: block;
-      background: url("../img/sidebar_item_arrow.jpg") no-repeat center 0;
+      background-image: url("../img/sidebar_item_arrow.jpg");
+      background-repeat: no-repeat;
+      background-position: center 0;
+      width: 17px;
       height: 10px;
       position: absolute;
-      top: -1px; }
+      bottom: -8px;
+      left: 50%;
+      margin-left: -8px; }
   .sidebar__title {
     color: #2e3641;
     font-size: 14px;
@@ -219,10 +225,17 @@ body {
     border-bottom: 1px solid #f4c3c2;
     padding: 0 20px 26px 20px; }
   .sidebar__display {
-    display: none; }
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 53px;
+    height: 22px;
+    margin: 0;
+    padding: 0; }
   .sidebar__position {
+    position: relative;
     border-bottom: 1px solid #f4c3c2;
-    padding: 0px 20px 21px 20px; }
+    padding: 0px 20px 32px 20px; }
     .sidebar__position-square {
       float: left; }
     .sidebar__position-switch {
@@ -232,14 +245,6 @@ body {
       margin-top: 35px; }
       .sidebar__position-item:nth-child(2n) {
         display: none; }
-    .sidebar__position-val {
-      background: transparent;
-      border-radius: 4px;
-      font-size: 24px;
-      text-align: center;
-      border: 1px solid #9eb2c0;
-      height: 44px;
-      width: 44px; }
   .sidebar__opacity {
     border-bottom: 1px solid #f4c3c2;
     padding: 0 20px 26px 20px; }
@@ -274,6 +279,43 @@ body {
     top: 0;
     right: 0; }
 
+.sidebar__display {
+  list-style: none; }
+  .sidebar__display-item {
+    float: left;
+    margin-left: 10px; }
+    .sidebar__display-item:first-child {
+      margin-left: 0; }
+    .sidebar__display-item_view1 {
+      background-image: url(../img/btn-display.png);
+      background-repeat: no-repeat;
+      background-position: 0, top;
+      width: 21px;
+      height: 24px; }
+      .sidebar__display-item_view1:hover {
+        background-image: url(../img/btn-display.png);
+        background-repeat: no-repeat;
+        background-position: -40px, top;
+        width: 21px;
+        height: 24px; }
+    .sidebar__display-item_view2 {
+      background-image: url(../img/btn-display.png);
+      background-repeat: no-repeat;
+      background-position: -120px, top;
+      width: 21px;
+      height: 24px; }
+      .sidebar__display-item_view2:hover {
+        background-image: url(../img/btn-display.png);
+        background-repeat: no-repeat;
+        background-position: -160px, top;
+        width: 21px;
+        height: 24px; }
+  .sidebar__display-link {
+    display: block;
+    font-size: 0;
+    width: 100%;
+    height: 100%; }
+
 .square {
   border-radius: 4px;
   overflow: hidden;
@@ -294,26 +336,43 @@ body {
       border-right: none; }
 
 .switch {
+  margin-top: 12px; }
+  .switch:first-child {
+    margin-top: 0; }
+
+.ui-spinner {
   position: relative;
-  margin-bottom: 10px; }
-  .switch__btn {
+  height: 46px; }
+  .ui-spinner-input {
+    background: transparent;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #9eb2c0;
+    height: 40px;
+    width: 44px; }
+  .ui-spinner-button {
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url("../img/switch_arrows_sprite.png");
-    height: 8px;
-    width: 13px;
-    position: absolute;
-    right: 2px; }
-    .switch__btn_up {
-      top: 5px; }
-      .switch__btn_up:hover {
-        background-position: -18px 0; }
-    .switch__btn_down {
-      background-position: 0 -30px;
-      bottom: 5px; }
-      .switch__btn_down:hover {
-        background-position: -18px -30px; }
+    background-image: url("../img/switches.png");
+    height: 22px;
+    width: 20px;
+    position: absolute; }
+  .ui-spinner-up {
+    top: -12px;
+    right: -26px; }
+    .ui-spinner-up:hover {
+      background-position: 0 -39px; }
+  .ui-spinner-down {
+    bottom: -13px;
+    right: -26px;
+    background-position: 0 -70px; }
+    .ui-spinner-down:hover {
+      background-position: 0 -110px; }
+
+.ui-icon {
+  display: none; }
 
 .ui-slider {
   border-radius: 3px;

@@ -70,8 +70,8 @@
               <div class="sidebar__position">
                 <h3 class="sidebar__title">Положение</h3>
                 <ul class="sidebar__display">
-                  <li class="sidebar__display-item sidebar__display-item_view1">Вид 1</li>
-                  <li class="sidebar__display-item sidebar__display-item_view2 sidebar__display-item_active">Вид 2</li>
+                  <li class="sidebar__display-item sidebar__display-item_view1"> <a class="sidebar__display-link">Вид 1</a></li>
+                  <li class="sidebar__display-item sidebar__display-item_view2 sidebar__display-item_active"> <a class="sidebar__display-link">Вид 2</a></li>
                 </ul>
                 <div class="sidebar__position-item clearfix">
                   <div class="sidebar__position-square">
@@ -90,11 +90,11 @@
                   <div class="sidebar__position-switch">
                     <div class="switch">
                       <label for="x" class="switch__label">X</label>
-                      <input id="x" type="text" value="0" name="x_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="x" type="text" value="0" name="x_pos_val" class="form__input sidebar__position-val">
                     </div>
                     <div class="switch">
                       <label for="y" class="switch__label">Y</label>
-                      <input id="y" type="text" value="0" name="y_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                      <input id="y" type="text" value="0" name="y_pos_val" class="form__input sidebar__position-val">
                     </div>
                   </div>
                 </div>
@@ -156,6 +156,7 @@
     <!-- endbower--><!-- endbuild -->
     <!-- build:js js/main.min.js -->
     <script src="js/main.js"></script>
+    <script src="../js/modules/myjqueryui.js"></script>
     <script src="js/app.js"></script>
     <script src="js/modules/slider.js"></script><!-- endbuild -->
   </body>

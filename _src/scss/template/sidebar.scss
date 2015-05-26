@@ -16,10 +16,15 @@
 		&:after {
 			content: "";
 			display: block;
-			background: url("../img/sidebar_item_arrow.jpg") no-repeat center 0;
+			background-image: url("../img/sidebar_item_arrow.jpg");
+			background-repeat: no-repeat;
+			background-position: center 0;
+			width: 17px;
 			height: 10px;
 			position: absolute;
-			top: -1px;
+			bottom: -8px;
+			left: 50%;
+			margin-left: -8px;
 		}
 	}
 	&__title {
@@ -33,11 +38,19 @@
 		padding: 0 20px 26px 20px;
 	}
 	&__display {
-		display: none;
+		@extend .clearfix;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		width: 53px;
+		height: 22px;
+		margin: 0;
+		padding: 0;
 	}
 	&__position {
+		position: relative;
 		border-bottom: 1px solid #f4c3c2;
-		padding: 0px 20px 21px 20px;
+		padding: 0px 20px 32px 20px;
 		&-square {
 			float: left;
 		}
@@ -45,20 +58,12 @@
 			float: right;
 			width: 84px;
 		}
+
 		&-item {
 			margin-top: 35px;
 			&:nth-child(2n) {
 				display: none;
 			}
-		}
-		&-val {
-			background: transparent;
-			border-radius: 4px;
-			font-size: 24px;
-			text-align: center;
-			border: 1px solid #9eb2c0;
-			height: 44px;
-			width: 44px;
 		}
 	}
 	&__opacity {

@@ -23,8 +23,10 @@
 
         //- Обёртка для переключателя отображения настроек ->
         ul.sidebar__display
-          li.sidebar__display-item.sidebar__display-item_view1 Вид 1
-          li.sidebar__display-item.sidebar__display-item_view2.sidebar__display-item_active Вид 2
+          li.sidebar__display-item.sidebar__display-item_view1 
+            a.sidebar__display-link Вид 1
+          li.sidebar__display-item.sidebar__display-item_view2.sidebar__display-item_active 
+            a.sidebar__display-link Вид 2
 
         //- Обёртка для отображения блока настроек Вида 1 ->
         .sidebar__position-item.clearfix
@@ -49,13 +51,13 @@
             .switch
               label.switch__label(for="x") X
               input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")
-              span.switch__btn.switch__btn_up
-              span.switch__btn.switch__btn_down
+              //- span.switch__btn.switch__btn_up
+              //- span.switch__btn.switch__btn_down
             .switch
               label.switch__label(for="y") Y
               input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")
-              span.switch__btn.switch__btn_up
-              span.switch__btn.switch__btn_down
+              //- span.switch__btn.switch__btn_up
+              //- span.switch__btn.switch__btn_down
         //- Обёртка для отображения блока настроек Вида 2 ->
         .sidebar__position-item.clearfix.sidebar__position-item_active
 
