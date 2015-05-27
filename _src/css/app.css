@@ -24,6 +24,7 @@ body {
     margin: 0 auto;
     vertical-align: middle; }
   .footer__copy {
+    font-family: 'fira_sanslight';
     font-size: 12px;
     color: #ffffff;
     text-align: center; }
@@ -49,15 +50,17 @@ body {
   float: left;
   background: #6b6764;
   opacity: 0.64;
-  box-shadow: -5px 1px 8px 0px rgba(0, 0, 0, 0.35); }
-
-.main__headline {
-  margin-top: 15px;
-  margin-left: 25px;
-  margin-bottom: 54px;
-  font-family: "Segoe UI";
-  font-size: 36px;
-  color: #ffffff; }
+  box-shadow: -5px 1px 8px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: -5px 1px 8px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -5px 1px 8px 0px rgba(0, 0, 0, 0.35);
+  -o-box-shadow: -5px 1px 8px 0px rgba(0, 0, 0, 0.35); }
+  .main__headline {
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-bottom: 54px;
+    font-family: 'SegoeUILight';
+    font-size: 36px;
+    color: #ffffff; }
 
 .watermak {
   width: 650px;
@@ -68,131 +71,121 @@ body {
 .options {
   position: absolute;
   left: 0;
-  top: 100px; }
-
-.options__lang,
-.options__socials-list {
-  margin: 0;
-  margin-bottom: 18px;
-  padding: 0;
-  list-style: none; }
-
-.options__lang-item {
-  width: 43px;
-  height: 33px;
-  margin: 0;
-  border-top: 2px solid #a5a7ac; }
-  .options__lang-item:first-child {
-    border-top: none; }
-
-.options__lang-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
-  line-height: 33px;
-  color: #8e9298;
-  text-decoration: none;
-  text-transform: uppercase;
-  vertical-align: middle;
-  background-color: rgba(241, 241, 245, 0.7); }
-  .options__lang-link:hover {
-    color: #444a53; }
-
-.options__socials-list {
-  margin-bottom: 0;
-  display: block;
-  float: left; }
-
-.options__socials-item {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  width: 43px;
-  height: 41px;
-  margin: 0;
-  border: none; }
-
-.options__socials-item_fb {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -160px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-item_fb:hover {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -240px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-item_tw {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -320px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-item_tw:hover {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -400px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-item_vk {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -480px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-item_vk:hover {
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 -560px;
-  width: 43px;
-  height: 41px; }
-
-.options__socials-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  font-size: 0; }
-
-.options__social-item_hover {
-  float: left;
-  display: block;
-  width: 43px;
-  height: 41px;
-  font-size: 0;
-  background-color: rgba(241, 241, 245, 0.7);
-  background-image: url(../img/icon-socmedia.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  width: 43px;
-  height: 41px; }
-  .options__social-item_hover:hover {
+  top: 100px;
+  z-index: 10; }
+  .options__lang,
+  .options__socials-list {
+    margin: 0;
+    margin-bottom: 18px;
+    padding: 0;
+    list-style: none; }
+  .options__lang-item {
+    width: 43px;
+    height: 33px;
+    margin: 0;
+    border-top: 2px solid #a5a7ac; }
+    .options__lang-item:first-child {
+      border-top: none; }
+  .options__lang-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: 'SegoeUILight';
+    font-size: 20px;
+    line-height: 33px;
+    color: #8e9298;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(241, 241, 245, 0.7); }
+    .options__lang-link:hover {
+      color: #444a53; }
+  .options__socials-list {
+    margin-bottom: 0;
+    display: block;
+    float: left; }
+  .options__socials-item {
     background-color: rgba(241, 241, 245, 0.7);
     background-image: url(../img/icon-socmedia.png);
     background-repeat: no-repeat;
-    background-position: 2px -80px;
+    background-position: 0 0;
+    width: 43px;
+    height: 41px;
+    margin: 0;
+    border: none; }
+    .options__socials-item_fb {
+      background-color: rgba(241, 241, 245, 0.7);
+      background-image: url(../img/icon-socmedia.png);
+      background-repeat: no-repeat;
+      background-position: 0 -160px;
+      width: 43px;
+      height: 41px; }
+      .options__socials-item_fb:hover {
+        background-color: rgba(241, 241, 245, 0.7);
+        background-image: url(../img/icon-socmedia.png);
+        background-repeat: no-repeat;
+        background-position: 0 -240px;
+        width: 43px;
+        height: 41px; }
+    .options__socials-item_tw {
+      background-color: rgba(241, 241, 245, 0.7);
+      background-image: url(../img/icon-socmedia.png);
+      background-repeat: no-repeat;
+      background-position: 0 -320px;
+      width: 43px;
+      height: 41px; }
+      .options__socials-item_tw:hover {
+        background-color: rgba(241, 241, 245, 0.7);
+        background-image: url(../img/icon-socmedia.png);
+        background-repeat: no-repeat;
+        background-position: 0 -400px;
+        width: 43px;
+        height: 41px; }
+    .options__socials-item_vk {
+      background-color: rgba(241, 241, 245, 0.7);
+      background-image: url(../img/icon-socmedia.png);
+      background-repeat: no-repeat;
+      background-position: 0 -480px;
+      width: 43px;
+      height: 41px; }
+      .options__socials-item_vk:hover {
+        background-color: rgba(241, 241, 245, 0.7);
+        background-image: url(../img/icon-socmedia.png);
+        background-repeat: no-repeat;
+        background-position: 0 -560px;
+        width: 43px;
+        height: 41px; }
+  .options__socials-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0; }
+  .options__social-item_hover {
+    float: left;
+    display: block;
+    width: 43px;
+    height: 41px;
+    font-size: 0;
+    background-color: rgba(241, 241, 245, 0.7);
+    background-image: url(../img/icon-socmedia.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
     width: 43px;
     height: 41px; }
+    .options__social-item_hover:hover {
+      background-color: rgba(241, 241, 245, 0.7);
+      background-image: url(../img/icon-socmedia.png);
+      background-repeat: no-repeat;
+      background-position: 2px -80px;
+      width: 43px;
+      height: 41px; }
 
 .sidebar {
   background: #f1f1f5;
   float: right;
   padding: 0px 0 15px 0;
-  width: 260px; }
+  width: 262px; }
   .sidebar__headline {
     color: #2e3641;
     font-size: 26px;
@@ -296,6 +289,12 @@ body {
         background-position: -40px, top;
         width: 21px;
         height: 24px; }
+    .sidebar__display-item_view1.sidebar__display-item_active {
+      background-image: url(../img/btn-display.png);
+      background-repeat: no-repeat;
+      background-position: -80px, top;
+      width: 21px;
+      height: 24px; }
     .sidebar__display-item_view2 {
       background-image: url(../img/btn-display.png);
       background-repeat: no-repeat;
@@ -308,6 +307,12 @@ body {
         background-position: -160px, top;
         width: 21px;
         height: 24px; }
+    .sidebar__display-item_view2.sidebar__display-item_active {
+      background-image: url(../img/btn-display.png);
+      background-repeat: no-repeat;
+      background-position: -200px, top;
+      width: 21px;
+      height: 24px; }
   .sidebar__display-link {
     display: block;
     font-size: 0;
@@ -403,7 +408,7 @@ body {
 .form__btn {
   border-radius: 4px;
   color: #f1f1f5;
-  font: 18px "robotomedium";
+  font: 18px 'robotomedium';
   border: none;
   padding: 9px 0;
   width: 100px;

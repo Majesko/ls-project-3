@@ -9,12 +9,12 @@
           h3.sidebar__title Исходное изображение
         .form__field
           input.form__input.form__input_text(name="image_filename" type="text", placeholder="Image.jpg", readonly)
-          input.form__input.form__input_file(id="image", name="image" type="file")
+          input.form__input.form__input_file(id="image", name="image" type="file" accept="image/*,image/jpeg")
         label(for="watermark")
           h3.sidebar__title Водяной знак
         .form__field
           input.form__input.form__input_text(name="watermark_filename" type="text", placeholder="Image.png", readonly)
-          input.form__input.form__input_file(id="watermark", name="watermark" type="file")
+          input.form__input.form__input_file(id="watermark", name="watermark" type="file" accept="image/*,image/jpeg")
 
     //- Обёртка для настроек положения ->
     .sidebar__wrap
@@ -23,9 +23,9 @@
 
         //- Обёртка для переключателя отображения настроек ->
         ul.sidebar__display
-          li.sidebar__display-item.sidebar__display-item_view1 
+          li.sidebar__display-item.sidebar__display-item_view1.sidebar__display-item_active
             a.sidebar__display-link Вид 1
-          li.sidebar__display-item.sidebar__display-item_view2.sidebar__display-item_active 
+          li.sidebar__display-item.sidebar__display-item_view2 
             a.sidebar__display-link Вид 2
 
         //- Обёртка для отображения блока настроек Вида 1 ->

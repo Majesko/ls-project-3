@@ -19,11 +19,17 @@
 				@include btn-display(-40px);
 			}
 		}
+		&_view1.sidebar__display-item_active {
+			@include btn-display(-80px);
+		}
 		&_view2 {
 			@include btn-display(-120px);
 			&:hover {
 				@include btn-display(-160px);
 			}
+		}
+		&_view2.sidebar__display-item_active {
+			@include btn-display(-200px);
 		}
 	}
 	&-link {
