@@ -1,4 +1,5 @@
 (function(){
+
 	$("#up-left").click(function() {
 		$("#es1").position({
 			my: "left top",
