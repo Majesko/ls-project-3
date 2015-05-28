@@ -9,53 +9,56 @@
       .form__field
         input.form__input.form__input_text(name="image" type="text", placeholder="Image.jpg", readonly)
         input.form__input.form__input_file(id="image", name="jpg" type="file")
+        div.form__input_file-icon
       label(for="watermark")
         h3.sidebar__title Водяной знак
       .form__field
         input.form__input.form__input_text(name="watermark" type="text", placeholder="Image.jpg", readonly)
         input.form__input.form__input_file(id="watermark", name="png" type="file")
-
+        div.form__input_file-icon
     //- Обёртка для настроек положения ->
     .sidebar__position
       h3.sidebar__title Положение
 
       //- Обёртка для переключателя отображения настроек ->
       ul.sidebar__display
-        li.sidebar__display-item.sidebar__display-item_view1 Вид 1
-        li.sidebar__display-item.sidebar__display-item_view2.sidebar__display-item_active Вид 2
+        li.sidebar__display-item.sidebar__display-item_view1
+          a.sidebar__display-link Вид 1
+        li.sidebar__display-item.sidebar__display-item_view2
+          a.sidebar__display-link Вид 2
 
       //- Обёртка для отображения блока настроек Вида 1 ->
-      .sidebar__position-item
+      .sidebar__position-item.sidebar__position-item_active
 
         //- Обёртка для квадрата ->
         .sidebar__position-square
           //- Квадрат ->
           .square
             //- 9 ячеек ->
-            .square__item
-            .square__item
-            .square__item
-            .square__item
-            .square__item
-            .square__item
-            .square__item
-            .square__item
-            .square__item
+            .square__item(data-number="0" data-action="south-west")
+            .square__item(data-number="1" data-action="south")
+            .square__item(data-number="2" data-action="south-east")
+            .square__item(data-number="3" data-action="west")
+            .square__item(data-number="4" data-action="center")
+            .square__item(data-number="5" data-action="east")
+            .square__item(data-number="6" data-action="north-west")
+            .square__item(data-number="7" data-action="north")
+            .square__item(data-number="8" data-action="north-east")
 
         //- Обёртка для настроек ->
         .sidebar__position-switch
           .switch
             label.switch__label(for="x") X
             input.form__input.form__input_text(id="x", type="text", value="0")
-            span.switch__btn.switch__btn_up &and;
-            span.switch__btn.switch__btn_down &or;
+            //- span.switch__btn.switch__btn_up &and;
+            //- span.switch__btn.switch__btn_down &or;
           .switch
             label.switch__label(for="y") Y
             input.form__input.form__input_text(id="y", type="text", value="0")
-            span.switch__btn.switch__btn_up &and;
-            span.switch__btn.switch__btn_down &or;
+            //- span.switch__btn.switch__btn_up &and;
+            //- span.switch__btn.switch__btn_down &or;
       //- Обёртка для отображения блока настроек Вида 2 ->
-      .sidebar__position-item.sidebar__position-item_active
+      .sidebar__position-item
 
         //- Обёртка для квадрата ->
         .sidebar__position-square
@@ -77,13 +80,13 @@
           .switch
             label.switch__label(for="up-down") &updownarrow;
             input.form__input.form__input_text(id="up-down", type="text", name="up-down", value="0")
-            span.switch__btn.switch__btn_up &and;
-            span.switch__btn.switch__btn_down &or;
+            //- span.switch__btn.switch__btn_up &and;
+            //- span.switch__btn.switch__btn_down &or;
           .switch
             label.switch__label(for="left-right") &harr;
             input.form__input.form__input_text(id="left-right", type="text", name="left-right", value="0")
-            span.switch__btn.switch__btn_up &and;
-            span.switch__btn.switch__btn_down &or;
+            //- span.switch__btn.switch__btn_up &and;
+            //- span.switch__btn.switch__btn_down &or;
 
     //- Обёртка для настроек прозрачности ->
     .sidebar__opacity

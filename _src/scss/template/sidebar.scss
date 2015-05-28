@@ -1,0 +1,74 @@
+
+.sidebar {
+	width: 260px;
+	float: left;
+	background-color: #f1f1f5;
+	border-left: 1px solid #afa8ab;
+}
+// заголовок настройки
+.sidebar__headline {
+	font-family: 'robotolight';
+	font-size: 26px;
+	color: #2e3641;
+	text-align: center;
+}
+
+// декоративные элементы групп инпутов
+.sidebar__position,
+.sidebar__opacity,
+.sidebar__btns {
+	position: relative;
+
+	border-top: 1px solid #f4c3c2;
+	&:before {
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -10px;
+		border-top: 12px solid #f4c3c2;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+	}
+	&:after {
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: -2px;
+		left: 50%;
+		margin-left: -10px;
+		border-top: 12px solid #f1f1f5;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+	}
+}
+.sidebar__image-settings,
+.sidebar__position,
+.sidebar__opacity {
+	padding: 0 20px 30px;
+}
+.sidebar__btns {
+	padding: 25px 10px 0 10px;
+}
+
+// заголовки
+.sidebar__title {
+	font-family: 'robotolight';
+	font-size: 14px;
+	color: #2e3641;
+}
+
+// стили настроек позиции
+@import "sidebar__image-settings.scss";
+
+// стили настроек позиции
+@import "sidebar__position.scss";
+
+// стили ползунка прозрачности
+@import "sidebar__opacity.scss";
+
+// стили кнопок сброс и скачать
+@import "sidebar__btns.scss";

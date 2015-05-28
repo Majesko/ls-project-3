@@ -25,9 +25,9 @@ gulp.task('serve', ['sass', 'jade'], function() {
   // gulp.watch("app/css/*.css").on('change', reload);
   // gulp.watch("app/js/*.js").on('change', reload);
 
-  gulp.watch("_src/scss/*.scss", ['sass']);
+  gulp.watch("_src/scss/**/*.scss", ['sass']);
   gulp.watch("_src/jade/**/*.jade", ['jade']);
-  gulp.watch("_src/js/DevJS/*.js",     ['js']);
+  gulp.watch("_src/js/modules/*.js",['js']);
 
 });
 
