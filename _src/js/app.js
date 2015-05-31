@@ -1,5 +1,5 @@
 DragAndDrop = (function(){
-    var $draggable = $('.draggabilly');;
+    var $draggable = $('.draggabilly');
     var init = function (){
             _setUpListeners();
             var $draggable = $('.draggabilly').draggabilly({
@@ -15,12 +15,13 @@ DragAndDrop = (function(){
             // Метод срабатывающий при старте, рассчитывает позицию левого верхнего угла,
             // вывожу для примера.
             $draggable.on('dragMove', _getPozition);
-
         },
         setOpacity = function() {
-            var value = ($(this).slider( "value" ))/100;
+            var value = 1  - ($(this).slider( "value" )) / 100;
             $('.draggabilly__img').css('opacity',value)
         },
+        // Функция вызывается плагином spinner при нажатии на стрелочки
+        // или при зажиме стрелочек
         setPozition = function () {
             var spinner = $(this),
                 draggie = $draggable.data('draggabilly'),
@@ -34,7 +35,6 @@ DragAndDrop = (function(){
                 if((spinner.attr('id') === 'y') && (spinner.spinner('value') <= maxHeigh))
                     $draggable.css('top',spinner.spinner('value'));
             }
-            //console.log($(this).spinner("value"));
         },
         _setUpListeners = function () {
             $('.square__item').on('click',_moveAction);
@@ -92,6 +92,8 @@ DragAndDrop = (function(){
         },
         _getPozition = function(){
             var draggie = $draggable.data('draggabilly');
+            // Приписал Mаth для того чтобы не сыпались значения типа float.
+            // Да, я не знаю как ограничить число символов в input'e 
             $('#x').val(Math.floor($draggable.position().left));
             $('#y').val(Math.floor($draggable.position().top));
         },
@@ -108,7 +110,7 @@ DragAndDrop = (function(){
                 left = vector === "x"? value: nowValue.left;
                 element.animate({
                     'left': left,
-                    'top': top
+                    'top' : top
                 });
         };
     return {
@@ -126,21 +128,28 @@ DragAndDrop = (function(){
 $(function() {
 
 // подключение переключателей значений
-	var spinner = $('#x, #y, #up-down, #left-right').spinner({
+	var spinnerX = $('#x, #up-down').spinner({
 		min: 0,
-		max: 1000,
+		max: 580,
 		step: 1,
         numberFormat: "f",
-            spin: DragAndDrop.setPozition
-
+        spin: DragAndDrop.setPozition
 	});
+
+    var spinnerY = $('#y, #left-right').spinner({
+        min: 0,
+        max: 464,
+        step: 1,
+        numberFormat: "f",
+        spin: DragAndDrop.setPozition
+    });
 
 // подключение ползунка 
 	$('.sidebar__opacity-slider').slider({
 		animate: true,
         slide: DragAndDrop.setOpacity,
 		range: "min",
-		value: 100,
+		value: 0,
 		min: 1,
 		max: 100,
 		step: 1
