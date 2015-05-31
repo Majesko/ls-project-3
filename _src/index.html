@@ -15,7 +15,9 @@
     <!-- build:css font/fonts.min.css -->
     <link rel="stylesheet" href="fonts/fonts.css"><!-- endbuild -->
     <!-- build:css css/main.min.css -->
-    <link rel="stylesheet" href="css/main.css"><!-- endbuild -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/options.css"><!-- endbuild -->
     <!-- build:js js/modernizr.min.js -->
     <script src="bower/modernizr/modernizr.js"></script><!-- endbuild -->
   </head>
@@ -42,90 +44,101 @@
       <div class="container">
         <div class="main">
           <h1 class="main__headline">Генератор водяных знаков</h1>
-          <div class="watermak"></div>
+          <div id="target" class="watermak">
+            <!-- Квадрат для примера позциционирвования -->
+            <div id="es1" class="test-img"></div>
+             <!-- Квадрат для примера позциционирвования - конец-->
+          </div>
         </div>
         <!-- END .main-->
         <div class="sidebar">
           <h2 class="sidebar__headline">Настройки</h2>
           <form method="/" class="form">
-            <div class="sidebar__image-settings">
-              <label for="image">
-                <h3 class="sidebar__title">Исходное изображение</h3>
-              </label>
-              <div class="form__field">
-                <input name="image" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
-                <input id="image" name="jpg" type="file" class="form__input form__input_file">
-              </div>
-              <label for="watermark">
-                <h3 class="sidebar__title">Водяной знак</h3>
-              </label>
-              <div class="form__field">
-                <input name="watermark" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
-                <input id="watermark" name="png" type="file" class="form__input form__input_file">
-              </div>
-            </div>
-            <div class="sidebar__position">
-              <h3 class="sidebar__title">Положение</h3>
-              <ul class="sidebar__display">
-                <li class="sidebar__display-item sidebar__display-item_view1">Вид 1</li>
-                <li class="sidebar__display-item sidebar__display-item_view2 sidebar__display-item_active">Вид 2</li>
-              </ul>
-              <div class="sidebar__position-item">
-                <div class="sidebar__position-square">
-                  <div class="square">
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                  </div>
+            <div class="sidebar__wrap">
+              <div class="sidebar__image-settings">
+                <label for="image">
+                  <h3 class="sidebar__title">Исходное изображение</h3>
+                </label>
+                <div class="form__field">
+                  <input name="image_filename" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
+                  <input id="image" name="image" type="file" class="form__input form__input_file">
                 </div>
-                <div class="sidebar__position-switch">
-                  <div class="switch">
-                    <label for="x" class="switch__label">X</label>
-                    <input id="x" type="text" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
-                  </div>
-                  <div class="switch">
-                    <label for="y" class="switch__label">Y</label>
-                    <input id="y" type="text" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar__position-item sidebar__position-item_active">
-                <div class="sidebar__position-square">
-                  <div class="square">
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                  </div>
-                </div>
-                <div class="sidebar__position-switch">
-                  <div class="switch">
-                    <label for="up-down" class="switch__label">&updownarrow;</label>
-                    <input id="up-down" type="text" name="up-down" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
-                  </div>
-                  <div class="switch">
-                    <label for="left-right" class="switch__label">&harr;</label>
-                    <input id="left-right" type="text" name="left-right" value="0" class="form__input form__input_text"><span class="switch__btn switch__btn_up">&and;</span><span class="switch__btn switch__btn_down">&or;</span>
-                  </div>
+                <label for="watermark">
+                  <h3 class="sidebar__title">Водяной знак</h3>
+                </label>
+                <div class="form__field">
+                  <input name="watermark_filename" type="text" placeholder="Image.png" readonly class="form__input form__input_text">
+                  <input id="watermark" name="watermark" type="file" class="form__input form__input_file">
                 </div>
               </div>
             </div>
-            <div class="sidebar__opacity">
-              <h3 class="sidebar__title">Прозрачность</h3>
-              <div class="sidebar__opacity-slider"></div>
+            <div class="sidebar__wrap">
+              <div class="sidebar__position">
+                <h3 class="sidebar__title">Положение</h3>
+                <ul class="sidebar__display">
+                  <li class="sidebar__display-item sidebar__display-item_view1">Вид 1</li>
+                  <li class="sidebar__display-item sidebar__display-item_view2 sidebar__display-item_active">Вид 2</li>
+                </ul>
+                <div class="sidebar__position-item clearfix">
+                  <div class="sidebar__position-square">
+                    <div class="square clearfix">
+                      <div id="up-left" class="square__item"></div>
+                      <div id="up-center" class="square__item"></div>
+                      <div id="up-right" class="square__item"></div>
+                      <div id="left" class="square__item"></div>
+                      <div id="center" class="square__item"></div>
+                      <div id="right" class="square__item"></div>
+                      <div id="down-left" class="square__item"></div>
+                      <div id="down-center" class="square__item"></div>
+                      <div id="down-right" class="square__item"></div>
+                    </div>
+                  </div>
+                  <div class="sidebar__position-switch">
+                    <div class="switch">
+                      <label for="x" class="switch__label">X</label>
+                      <input id="x" type="text" value="0" name="x_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                    </div>
+                    <div class="switch">
+                      <label for="y" class="switch__label">Y</label>
+                      <input id="y" type="text" value="0" name="y_pos_val" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar__position-item clearfix sidebar__position-item_active">
+                  <div class="sidebar__position-square">
+                    <div class="square">
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                      <div class="square__item"></div>
+                    </div>
+                  </div>
+                  <div class="sidebar__position-switch">
+                    <div class="switch">
+                      <label for="up-down" class="switch__label">&updownarrow;</label>
+                      <input id="up-down" type="text" name="up-down_val" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                    </div>
+                    <div class="switch">
+                      <label for="left-right" class="switch__label">&harr;</label>
+                      <input id="left-right" type="text" name="left-right_val" value="0" class="form__input sidebar__position-val"><span class="switch__btn switch__btn_up"></span><span class="switch__btn switch__btn_down"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="sidebar__btns">
+            <div class="sidebar__wrap">
+              <div class="sidebar__opacity">
+                <h3 class="sidebar__title">Прозрачность</h3>
+                <div class="sidebar__opacity-slider"></div>
+                <input type="text" readonly name="slider_val" hidden class="sidebar__opacity-value">
+              </div>
+            </div>
+            <div class="sidebar__btns clearfix">
               <input type="reset" value="Сброс" class="form__btn form__btn_reset">
               <input type="submit" value="Скачать" class="form__btn form__btn_download">
             </div>
@@ -148,6 +161,8 @@
     <script src="/bower/jquery-ui/jquery-ui.js"></script>
     <!-- endbower--><!-- endbuild -->
     <!-- build:js js/main.min.js -->
-    <script src="js/main.js"></script><!-- endbuild -->
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modules/slider.js"></script><!-- endbuild -->
   </body>
 </html>

@@ -1,5 +1,5 @@
 (function(){
-
+//Позиционирование нажатием на квадраты 
 	$("#up-left").click(function() {
 		$("#es1").position({
 			my: "left top",
