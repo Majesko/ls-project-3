@@ -1,4 +1,3 @@
-
 $(function() {
 	$(".sidebar__opacity-slider" ).slider({
 		range: "min",
