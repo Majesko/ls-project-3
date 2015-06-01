@@ -100,8 +100,11 @@
 	width: 33px;
 	height: 33px;
 	&:hover {
-		background: #f97e76;
-	}
+      background: #f97e76;
+    }
+}
+.active {
+  background: #f97e76;
 }
 .sidebar__position-switch {
 	float: right;

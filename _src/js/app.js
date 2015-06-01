@@ -17,85 +17,95 @@ DragAndDrop = (function(){
             $draggable.on('dragMove', _getPozition);
         },
         setOpacity = function() {
-            var value = 1  - ($(this).slider( "value" )) / 100;
-            $('.draggabilly__img').css('opacity',value)
+            var value = 1  - ($(this).slider( "value" )) / 100,
+                field = $('.sidebar__opacity');
+            $('.draggabilly__img').css('opacity',value);
+            field.attr('data-opacity',value);
+
         },
         // Функция вызывается плагином spinner при нажатии на стрелочки
         // или при зажиме стрелочек
         setPozition = function () {
             var spinner = $(this),
+                switchInput = spinner.parent().find('input'),
+                spinnerValue = spinner.spinner('value') + 1,
                 draggie = $draggable.data('draggabilly'),
                 maxWidth = $draggable.parent().width() - $draggable.width(),
                 maxHeigh = $draggable.parent().height() - $draggable.height();
 
-            if((spinner.attr('id') === "x") && (spinner.spinner('value') <= maxWidth)){
-                $draggable.css('left',spinner.spinner('value'));
+            if((spinner.attr('id') === "x") && (spinnerValue <= maxWidth)){
+                $draggable.css('left',spinnerValue);
+                switchInput.attr('data-position-x',spinnerValue);
             }
             else {
-                if((spinner.attr('id') === 'y') && (spinner.spinner('value') <= maxHeigh))
-                    $draggable.css('top',spinner.spinner('value'));
+                if((spinner.attr('id') === 'y') && (spinnerValue <= maxHeigh)) {
+                    $draggable.css('top', spinnerValue);
+                    switchInput.attr('data-position-y', spinnerValue);
+                }
             }
+            _dontActiveSquare();
         },
         _setUpListeners = function () {
             $('.square__item').on('click',_moveAction);
             $('#x,#y').on('keyup',_setInputPosition);
         },
         _moveAction = function () {
-            var vector = $(this).data('action'),
-                numberSquare = $(this).data('number'),
+            var $this = $(this),
+                vector = $this.data('action'),
                 element = $draggable,
                 widthWrapper = element.parent().width(),
                 heightWrapper = element.parent().height(),
-                width = widthWrapper/ 3,
-                height = heightWrapper/ 3,
-                count = 0;
+                elementHalfWidth = element.width()/ 2,
+                elementHalfHeight = element.height()/ 2,
+                width = 0,
+                height = 0;
 
-            for(var i = 0; i < 3; i++)
-                for(var j = 0;j < 3; j++ ){
-                    if(count == numberSquare){
-                        _setPositionOnClick(element,i*height,j*width);
-                        i = 3;
-                        break;
-                    }
-                    count++;
-                }
-            _getPozition();
-            /*switch (vector){
+            switch (vector){
                 case 'south-west':
-                    _setPositionOnClick(element,0,0);
                     break;
                 case 'south':
-                    _setPositionOnClick(element,0,width);
+                    width = widthWrapper/2 - elementHalfWidth;
                     break;
                 case 'south-east':
-                    _setPositionOnClick(element,0,2*width);
+                    width = widthWrapper - 2*elementHalfWidth;
                     break;
                 case 'east':
-                    _setPositionOnClick(element,height,2*width);
+                    height = heightWrapper/2 - elementHalfHeight;
+                    width =  widthWrapper - 2*elementHalfWidth;
                     break;
                 case 'center':
-                    _setPositionOnClick(element,height,width);
+                    width = widthWrapper/2 - elementHalfWidth;
+                    height = heightWrapper/2 - elementHalfHeight;
                     break;
                 case 'north-east':
-                    _setPositionOnClick(element,2*height,2*width);
+                    width = widthWrapper - 2*elementHalfWidth;
+                    height = heightWrapper - 2*elementHalfHeight;
                     break;
                 case 'north':
-                    _setPositionOnClick(element,2*height,width);
+                    width = widthWrapper/2 - elementHalfWidth;
+                    height = heightWrapper - 2*elementHalfHeight;
                     break;
                 case 'north-west':
-                    _setPositionOnClick(element,2*height,0);
+                    height = heightWrapper - 2*elementHalfHeight;
                     break;
                 case 'west':
-                    _setPositionOnClick(element,height,0);
+                    height = heightWrapper/2 - elementHalfHeight;
                     break;
-            }*/
+            }
+            _setPositionOnClick(element,height,width);
+            _getPozition();
+            $this.addClass('active');
         },
         _getPozition = function(){
-            var draggie = $draggable.data('draggabilly');
+            var draggie = $draggable.data('draggabilly'),
+                top = $draggable.position().top,
+                left = $draggable.position().left;
             // Приписал Mаth для того чтобы не сыпались значения типа float.
-            // Да, я не знаю как ограничить число символов в input'e 
-            $('#x').val(Math.floor($draggable.position().left));
-            $('#y').val(Math.floor($draggable.position().top));
+            // Да, я не знаю как ограничить число символов в input'e
+            $('#x').val(Math.floor(left));
+            $('#y').val(Math.floor(top));
+            _dontActiveSquare();
+            _setAtributes(left,top)
         },
         _setPositionOnClick = function (element,top,left){
             element.css('top',top);
@@ -112,6 +122,18 @@ DragAndDrop = (function(){
                     'left': left,
                     'top' : top
                 });
+            _setAtributes(top,left);
+            _dontActiveSquare();
+        },
+        _setAtributes = function(x,y) {
+            $('#x').attr('data-position-x',x);
+            $('#y').attr('data-position-y',y);
+        },
+        _dontActiveSquare = function () {
+            var squares = $('.square__item');
+            $.each(squares,function(index,value){
+                $(value).removeClass('active');
+            });
         };
     return {
         init: init,
@@ -129,28 +151,29 @@ $(function() {
 
 // подключение переключателей значений
 	var spinnerX = $('#x, #up-down').spinner({
-		min: 0,
-		max: 580,
-		step: 1,
-        numberFormat: "f",
-        spin: DragAndDrop.setPozition
-	});
-
-    var spinnerY = $('#y, #left-right').spinner({
-        min: 0,
-        max: 464,
-        step: 1,
-        numberFormat: "f",
-        spin: DragAndDrop.setPozition
-    });
+            min: 0,
+            max: 580,
+            step: 1,
+            numberFormat: "f",
+            spin: DragAndDrop.setPozition
+	    }),
+        spinnerY = $('#y, #left-right').spinner({
+            min: 0,
+            max: 464,
+            step: 1,
+            numberFormat: "f",
+            spin: DragAndDrop.setPozition
+        });
 
 // подключение ползунка 
 	$('.sidebar__opacity-slider').slider({
 		animate: true,
         slide: DragAndDrop.setOpacity,
+        stop: DragAndDrop.setOpacity, // Из-за того что значения не успевают за
+                                      // за ползунком.
 		range: "min",
 		value: 0,
-		min: 1,
+		min: 0,
 		max: 100,
 		step: 1
 	});
