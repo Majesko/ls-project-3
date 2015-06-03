@@ -1,6 +1,6 @@
 .sidebar
   h2.sidebar__headline Настройки
-  form.form(method="/")
+  form.form(method="POST" action="/test/test.php")
 
     //- Обёртка для настроек изображения ->
     .sidebar__image-settings
@@ -8,7 +8,7 @@
         h3.sidebar__title Исходное изображение
       .form__field
         input.form__input.form__input_text(name="image" type="text", placeholder="Image.jpg", readonly)
-        input.form__input.form__input_file(id="image", name="jpg" type="file")
+        input.form__input.form__input_file(id="image", name="jpg" type="file"  multiple)
         div.form__input_file-icon
       label(for="watermark")
         h3.sidebar__title Водяной знак

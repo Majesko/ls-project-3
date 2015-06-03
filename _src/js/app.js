@@ -145,6 +145,12 @@ DragAndDrop = (function(){
 ;$(document).ready( function() {
     DragAndDrop.init();
 });
+$('#image').fileupload({
+    dataType: 'json',
+    done: function (e, data ) {
+        alert("done::" + data);
+    }
+});
 
 
 $(function() {
