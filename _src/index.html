@@ -57,86 +57,95 @@
         <div class="sidebar">
           <h2 class="sidebar__headline">Настройки</h2>
           <form method="POST" action="/test/test.php" class="form">
-            <div class="sidebar__image-settings">
-              <label for="image">
-                <h3 class="sidebar__title">Исходное изображение</h3>
-              </label>
-              <div class="form__field">
-                <input name="image" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
-                <input id="image" name="jpg" type="file" multiple class="form__input form__input_file">
-                <div class="form__input_file-icon"></div>
-              </div>
-              <label for="watermark">
-                <h3 class="sidebar__title">Водяной знак</h3>
-              </label>
-              <div class="form__field">
-                <input name="watermark" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
-                <input id="watermark" name="png" type="file" class="form__input form__input_file">
-                <div class="form__input_file-icon"></div>
-              </div>
-            </div>
-            <div class="sidebar__position">
-              <h3 class="sidebar__title">Положение</h3>
-              <ul class="sidebar__display">
-                <li class="sidebar__display-item sidebar__display-item_view1"><a class="sidebar__display-link">Вид 1</a></li>
-                <li class="sidebar__display-item sidebar__display-item_view2"><a class="sidebar__display-link">Вид 2</a></li>
-              </ul>
-              <div class="sidebar__position-item sidebar__position-item_active">
-                <div class="sidebar__position-square">
-                  <div class="square">
-                    <div data-action="south-west" class="square__item"></div>
-                    <div data-action="south" class="square__item"></div>
-                    <div data-action="south-east" class="square__item"></div>
-                    <div data-action="west" class="square__item"></div>
-                    <div data-action="center" class="square__item"></div>
-                    <div data-action="east" class="square__item"></div>
-                    <div data-action="north-west" class="square__item"></div>
-                    <div data-action="north" class="square__item"></div>
-                    <div data-action="north-east" class="square__item"></div>
-                  </div>
+            <div class="sidebar__wrap">
+              <div class="sidebar__image-settings">
+                <label for="image">
+                  <h3 class="sidebar__title">Исходное изображение</h3>
+                </label>
+                <div class="form__field">
+                  <input name="image_filename" type="text" placeholder="Image.jpg" readonly class="form__input form__input_text">
+                  <input id="image" name="image" type="file" accept="image/*,image/jpeg" class="form__input form__input_file">
                 </div>
-                <div class="sidebar__position-switch">
-                  <div class="switch">
-                    <label for="x" class="switch__label">X</label>
-                    <input id="x" type="text" value="0" class="form__input form__input_text">
-                  </div>
-                  <div class="switch">
-                    <label for="y" class="switch__label">Y</label>
-                    <input id="y" type="text" value="0" class="form__input form__input_text">
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar__position-item">
-                <div class="sidebar__position-square">
-                  <div class="square">
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                    <div class="square__item"></div>
-                  </div>
-                </div>
-                <div class="sidebar__position-switch">
-                  <div class="switch">
-                    <label for="up-down" class="switch__label">&updownarrow;</label>
-                    <input id="up-down" type="text" name="up-down" value="0" class="form__input form__input_text">
-                  </div>
-                  <div class="switch">
-                    <label for="left-right" class="switch__label">&harr;</label>
-                    <input id="left-right" type="text" name="left-right" value="0" class="form__input form__input_text">
-                  </div>
+                <label for="watermark">
+                  <h3 class="sidebar__title">Водяной знак</h3>
+                </label>
+                <div class="form__field">
+                  <input name="watermark_filename" type="text" placeholder="Image.png" readonly class="form__input form__input_text">
+                  <input id="watermark" name="watermark" type="file" accept="image/*,image/jpeg" class="form__input form__input_file">
                 </div>
               </div>
             </div>
-            <div class="sidebar__opacity">
-              <h3 class="sidebar__title">Прозрачность</h3>
-              <div class="sidebar__opacity-slider"></div>
+            <div class="sidebar__wrap">
+              <div class="sidebar__position">
+                <h3 class="sidebar__title">Положение</h3>
+                <ul class="sidebar__display">
+                  <li class="sidebar__display-item sidebar__display-item_view1 sidebar__display-item_active"><a class="sidebar__display-link">Вид 1</a></li>
+                  <li class="sidebar__display-item sidebar__display-item_view2"> <a class="sidebar__display-link">Вид 2</a></li>
+                </ul>
+                <!--.sidebar__position-item.clearfix-->
+                <!--//- Обёртка для квадрата ->-->
+                <!--.sidebar__position-square-->
+                <!--  //- Квадрат ->-->
+                <!--  .square-->
+                <!--    //- 9 ячеек ->-->
+                <!--    .square__item(data-action="south-west")-->
+                <!--    .square__item(data-action="south")-->
+                <!--    .square__item(data-action="south-east")-->
+                <!--    .square__item(data-action="west")-->
+                <!--    .square__item(data-action="center")-->
+                <!--    .square__item(data-action="east")-->
+                <!--    .square__item(data-action="north-west")-->
+                <!--    .square__item(data-action="north")-->
+                <!--    .square__item(data-action="north-east")-->
+                <!--  //- Обёртка для настроек ->-->
+                <!--  .sidebar__position-switch-->
+                <!--    .switch-->
+                <!--      label.switch__label(for="x") X-->
+                <!--      input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")-->
+                <!--      //- span.switch__btn.switch__btn_up-->
+                <!--      //- span.switch__btn.switch__btn_down-->
+                <!--    .switch-->
+                <!--      label.switch__label(for="y") Y-->
+                <!--      input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")-->
+                <!--      //- span.switch__btn.switch__btn_up-->
+                <!--      //- span.switch__btn.switch__btn_down-->
+                <div class="sidebar__position-item clearfix sidebar__position-item_active">
+                  <div class="sidebar__position-square">
+                    <div class="square">
+                      <div data-action="south-west" class="square__item"></div>
+                      <div data-action="south" class="square__item"></div>
+                      <div data-action="south-east" class="square__item"></div>
+                      <div data-action="west" class="square__item"></div>
+                      <div data-action="center" class="square__item"></div>
+                      <div data-action="east" class="square__item"></div>
+                      <div data-action="north-west" class="square__item"></div>
+                      <div data-action="north" class="square__item"></div>
+                      <div data-action="north-east" class="square__item"></div>
+                    </div>
+                  </div>
+                  <div class="sidebar__position-switch">
+                    <div class="switch">
+                      <label for="up-down" class="switch__label">&updownarrow;</label>
+                      <input id="x" type="text" value="0" name="x_pos_val" class="form__input sidebar__position-val">
+                      <!--input.form__input.sidebar__position-val(id="up-down", type="text", name="up-down_val", value="0")-->
+                    </div>
+                    <div class="switch">
+                      <label for="left-right" class="switch__label">&harr;</label>
+                      <input id="y" type="text" value="0" name="y_pos_val" class="form__input sidebar__position-val">
+                      <!--input.form__input.sidebar__position-val(id="left-right", type="text", name="left-right_val", value="0")-->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="sidebar__btns">
+            <div class="sidebar__wrap">
+              <div class="sidebar__opacity">
+                <h3 class="sidebar__title">Прозрачность</h3>
+                <div class="sidebar__opacity-slider"></div>
+                <input type="text" readonly name="slider_val" hidden class="sidebar__opacity-value">
+              </div>
+            </div>
+            <div class="sidebar__btns clearfix">
               <input type="reset" value="Сброс" class="form__btn form__btn_reset">
               <input type="submit" value="Скачать" class="form__btn form__btn_download">
             </div>
@@ -159,14 +168,8 @@
     <script src="/bower/jquery-ui/jquery-ui.js"></script>
     <!-- Для Drag And Drop-->
     <script src="bower/draggabilly/dist/draggabilly.pkgd.min.js"></script>
-    <!-- test-->
-    <script src="FileUp/js/vendor/jquery.ui.widget.js"></script>
-    <script src="FileUp/js/jquery.iframe-transport.js"></script>
-    <script src="FileUp/js/jquery.fileupload.js"></script>
-    <script src="js/modules/FileUploud.js"></script>
     <!-- endbower--><!-- endbuild -->
     <!-- build:js js/main.min.js -->
-    <script src="js/app.js"></script>
-    <script src="../js/modules/myjqueryui.js"></script><!-- endbuild -->
+    <script src="js/app.js"></script><!-- endbuild -->
   </body>
 </html>

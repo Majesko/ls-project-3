@@ -94,7 +94,7 @@ DragAndDrop = (function(){
             }
             _setPositionOnClick(element,height,width);
             _getPozition();
-            $this.addClass('active');
+            $this.addClass('sq_active');
         },
         _getPozition = function(){
             var draggie = $draggable.data('draggabilly'),
@@ -132,7 +132,7 @@ DragAndDrop = (function(){
         _dontActiveSquare = function () {
             var squares = $('.square__item');
             $.each(squares,function(index,value){
-                $(value).removeClass('active');
+                $(value).removeClass('sq_active');
             });
         };
     return {

@@ -94,7 +94,7 @@ DragAndDrop = (function(){
             }
             _setPositionOnClick(element,height,width);
             _getPozition();
-            $this.addClass('active');
+            $this.addClass('sq_active');
         },
         _getPozition = function(){
             var draggie = $draggable.data('draggabilly'),
@@ -132,7 +132,7 @@ DragAndDrop = (function(){
         _dontActiveSquare = function () {
             var squares = $('.square__item');
             $.each(squares,function(index,value){
-                $(value).removeClass('active');
+                $(value).removeClass('sq_active');
             });
         };
     return {
@@ -144,12 +144,6 @@ DragAndDrop = (function(){
 
 ;$(document).ready( function() {
     DragAndDrop.init();
-});
-$('#image').fileupload({
-    dataType: 'json',
-    done: function (e, data ) {
-        alert("done::" + data);
-    }
 });
 
 
@@ -184,4 +178,30 @@ $(function() {
 		step: 1
 	});
 
+});
+
+/*
+$(function() {
+	$(".sidebar__opacity-slider" ).slider({
+		range: "min",
+		min: 0,
+		max: 100,
+		value: 60,
+		slide: function( event, ui ) {
+			$(".sidebar__opacity-value").val( ui.value );
+		}
+	});
+	$(".sidebar__opacity-value").val($(".sidebar__opacity-slider").slider("value"));
+});*/
+
+$(function() {
+	// отслеживаем загрузку изображения
+	$('.form__input_file').change(function() {
+		// в переменную заносим значение value, если загружено изображение
+		var fileResult = $(this).val();
+		
+		// передаём значение инпуту с типом текст из инпута с типом файл
+		$(this).prev('.form__input_text').val(fileResult);
+		
+	});
 });

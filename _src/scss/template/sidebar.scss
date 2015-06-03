@@ -1,64 +1,81 @@
-
 .sidebar {
-	width: 260px;
-	float: left;
-	background-color: #f1f1f5;
-	border-left: 1px solid #afa8ab;
-}
-// заголовок настройки
-.sidebar__headline {
-	font-family: 'robotolight';
-	font-size: 26px;
-	color: #2e3641;
-	text-align: center;
-}
-
-// декоративные элементы групп инпутов
-.sidebar__position,
-.sidebar__opacity,
-.sidebar__btns {
-	position: relative;
-
-	border-top: 1px solid #f4c3c2;
-	&:before {
-		content: "";
-		width: 0;
-		height: 0;
+	background: #f1f1f5;
+	float: right;
+	padding: 0px 0 15px 0;
+	width: 262px;
+	&__headline {
+		color: #2e3641;
+		font-size: 26px;
+		font-family: 'robotolight';
+		text-align: center;
+		margin-bottom: 29px;
+	}
+	&__wrap {
+		position: relative;
+		margin: 0;
+		&:after {
+			content: "";
+			display: block;
+			background-image: url("../img/sidebar_item_arrow.jpg");
+			background-repeat: no-repeat;
+			background-position: center 0;
+			width: 17px;
+			height: 10px;
+			position: absolute;
+			bottom: -8px;
+			left: 50%;
+			margin-left: -8px;
+		}
+	}
+	&__title {
+		color: #2e3641;
+		font-size: 14px;
+		font-family: 'robotolight';
+		margin-bottom: 8px;
+	}
+	&__image-settings {
+		border-bottom: 1px solid #f4c3c2;
+		padding: 0 20px 26px 20px;
+	}
+	&__display {
+		@extend .clearfix;
 		position: absolute;
 		top: 0;
-		left: 50%;
-		margin-left: -10px;
-		border-top: 12px solid #f4c3c2;
-		border-right: 10px solid transparent;
-		border-left: 10px solid transparent;
+		right: 10px;
+		width: 53px;
+		height: 22px;
+		margin: 0;
+		padding: 0;
 	}
-	&:after {
-		content: "";
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: -2px;
-		left: 50%;
-		margin-left: -10px;
-		border-top: 12px solid #f1f1f5;
-		border-right: 10px solid transparent;
-		border-left: 10px solid transparent;
-	}
-}
-.sidebar__image-settings,
-.sidebar__position,
-.sidebar__opacity {
-	padding: 0 20px 30px;
-}
-.sidebar__btns {
-	padding: 25px 10px 0 10px;
-}
+	&__position {
+		position: relative;
+		border-bottom: 1px solid #f4c3c2;
+		padding: 0px 20px 32px 20px;
+		&-square {
+			float: left;
+		}
+		&-switch {
+			float: right;
+			width: 84px;
+		}
 
-// заголовки
-.sidebar__title {
-	font-family: 'robotolight';
-	font-size: 14px;
-	color: #2e3641;
+		&-item {
+			margin-top: 35px;
+			&:nth-child(2n) {
+				display: none;
+			}
+		}
+	}
+	&__opacity {
+		border-bottom: 1px solid #f4c3c2;
+		padding: 0 20px 26px 20px;
+		&-slider {
+			margin: 28px 0 8px 0;
+		}
+	}
+	&__btns {
+		padding: 55px 10px 10px 10px;
+	}
 }
 
 // стили настроек позиции
