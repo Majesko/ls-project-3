@@ -27,7 +27,7 @@ gulp.task('serve', ['sass', 'jade'], function() {
 
   gulp.watch("_src/scss/**/*.scss", ['sass']);
   gulp.watch("_src/jade/**/*.jade", ['jade']);
-  gulp.watch("_src/js/*.js",     ['js']);
+  gulp.watch("_src/js/modules/*.js",['js']);
 
 });
 

@@ -1,6 +1,6 @@
 .sidebar
   h2.sidebar__headline Настройки
-  form.form(method="/")
+  form.form(method="POST" action="/test/test.php")
 
     //- Обёртка для настроек изображения ->
     .sidebar__wrap
@@ -15,7 +15,6 @@
         .form__field
           input.form__input.form__input_text(name="watermark_filename" type="text", placeholder="Image.png", readonly)
           input.form__input.form__input_file(id="watermark", name="watermark" type="file" accept="image/*,image/jpeg")
-
     //- Обёртка для настроек положения ->
     .sidebar__wrap
       .sidebar__position
@@ -29,35 +28,33 @@
             a.sidebar__display-link Вид 2
 
         //- Обёртка для отображения блока настроек Вида 1 ->
-        .sidebar__position-item.clearfix
-
-          //- Обёртка для квадрата ->
-          .sidebar__position-square
-            //- Квадрат ->
-            .square.clearfix
-              //- 9 ячеек ->
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-
-          //- Обёртка для настроек ->
-          .sidebar__position-switch
-            .switch
-              label.switch__label(for="x") X
-              input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")
-              //- span.switch__btn.switch__btn_up
-              //- span.switch__btn.switch__btn_down
-            .switch
-              label.switch__label(for="y") Y
-              input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")
-              //- span.switch__btn.switch__btn_up
-              //- span.switch__btn.switch__btn_down
+        //.sidebar__position-item.clearfix
+        ////- Обёртка для квадрата ->
+        //.sidebar__position-square
+        //  //- Квадрат ->
+        //  .square
+        //    //- 9 ячеек ->
+        //    .square__item(data-action="south-west")
+        //    .square__item(data-action="south")
+        //    .square__item(data-action="south-east")
+        //    .square__item(data-action="west")
+        //    .square__item(data-action="center")
+        //    .square__item(data-action="east")
+        //    .square__item(data-action="north-west")
+        //    .square__item(data-action="north")
+        //    .square__item(data-action="north-east")
+        //  //- Обёртка для настроек ->
+        //  .sidebar__position-switch
+        //    .switch
+        //      label.switch__label(for="x") X
+        //      input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")
+        //      //- span.switch__btn.switch__btn_up
+        //      //- span.switch__btn.switch__btn_down
+        //    .switch
+        //      label.switch__label(for="y") Y
+        //      input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")
+        //      //- span.switch__btn.switch__btn_up
+        //      //- span.switch__btn.switch__btn_down
         //- Обёртка для отображения блока настроек Вида 2 ->
         .sidebar__position-item.clearfix.sidebar__position-item_active
 
@@ -66,28 +63,30 @@
             //- Квадрат ->
             .square
               //- 9 ячеек ->
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
-              .square__item
+              .square__item(data-action="south-west")
+              .square__item(data-action="south")
+              .square__item(data-action="south-east")
+              .square__item(data-action="west")
+              .square__item(data-action="center")
+              .square__item(data-action="east")
+              .square__item(data-action="north-west")
+              .square__item(data-action="north")
+              .square__item(data-action="north-east")
 
           //- Обёртка для настроек ->
           .sidebar__position-switch
             .switch
               label.switch__label(for="up-down") &updownarrow;
-              input.form__input.sidebar__position-val(id="up-down", type="text", name="up-down_val", value="0")
-              span.switch__btn.switch__btn_up
-              span.switch__btn.switch__btn_down
+              input.form__input.sidebar__position-val(id="x", type="text", value="0", name="x_pos_val")
+              //input.form__input.sidebar__position-val(id="up-down", type="text", name="up-down_val", value="0")
+              //-span.switch__btn.switch__btn_up
+              //- span.switch__btn.switch__btn_down
             .switch
               label.switch__label(for="left-right") &harr;
-              input.form__input.sidebar__position-val(id="left-right", type="text", name="left-right_val", value="0")
-              span.switch__btn.switch__btn_up
-              span.switch__btn.switch__btn_down
+              input.form__input.sidebar__position-val(id="y", type="text", value="0", name="y_pos_val")
+              //input.form__input.sidebar__position-val(id="left-right", type="text", name="left-right_val", value="0")
+              //-span.switch__btn.switch__btn_up
+              //-span.switch__btn.switch__btn_down
 
     //- Обёртка для настроек прозрачности ->
     .sidebar__wrap

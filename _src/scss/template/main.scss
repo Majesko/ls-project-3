@@ -73,8 +73,26 @@ body {
 }
 
 .watermak {
+    position: relative;
 	width: 650px;
 	height: 534px;
 	margin: 0 auto 25px;
 	background: #ffffff;
+}
+.draggabilly {
+  display: inline-block;
+}
+.draggabilly__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+// Классы для стилизации DragAndDrop из коробки, может пригодится верстальщикам
+// Стили при зажатии клавиши мыши на нём
+.draggabilly.is-pointer-down {
+
+}
+// Стили при передвижении элемента.
+.draggabilly.is-dragging {
+
 }
